@@ -118,7 +118,7 @@ namespace Ex
         {
             lock ( m_ObjectsList )
             {
-                Thread.Sleep( 50 );
+                Thread.Sleep( 100 );
                 Thread.BeginCriticalRegion();
 
                 var currentTickSpan = TimeSpan.FromTicks( DateTime.Now.Ticks );

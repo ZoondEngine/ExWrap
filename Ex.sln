@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExTests", "ExTests\ExTests.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex.Application.Server", "Ex.Application.Server\Ex.Application.Server.csproj", "{5EE38026-77EF-4514-9748-7B23415E23D8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex.Plugin.Arg", "Ex.Plugin.Arg\Ex.Plugin.Arg.csproj", "{D4302332-4895-4EAE-B662-1FF3184EA2D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,14 @@ Global
 		{5EE38026-77EF-4514-9748-7B23415E23D8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5EE38026-77EF-4514-9748-7B23415E23D8}.Release|x64.ActiveCfg = Release|x64
 		{5EE38026-77EF-4514-9748-7B23415E23D8}.Release|x64.Build.0 = Release|x64
+		{D4302332-4895-4EAE-B662-1FF3184EA2D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4302332-4895-4EAE-B662-1FF3184EA2D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4302332-4895-4EAE-B662-1FF3184EA2D3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D4302332-4895-4EAE-B662-1FF3184EA2D3}.Debug|x64.Build.0 = Debug|Any CPU
+		{D4302332-4895-4EAE-B662-1FF3184EA2D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4302332-4895-4EAE-B662-1FF3184EA2D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4302332-4895-4EAE-B662-1FF3184EA2D3}.Release|x64.ActiveCfg = Release|Any CPU
+		{D4302332-4895-4EAE-B662-1FF3184EA2D3}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

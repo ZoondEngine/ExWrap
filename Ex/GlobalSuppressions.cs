@@ -5,5 +5,4 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-[assembly: SuppressMessage( "Style", "IDE1006:Стили именования", Justification = "<Ожидание>", Scope = "member", Target = "~P:Ex.ExObject.m_Behaviors" )]
-[assembly: SuppressMessage( "Style", "IDE1006:Стили именования", Justification = "<Ожидание>", Scope = "member", Target = "~P:Ex.ExObject.m_Tag" )]
+[assembly: SuppressMessage("Style", "IDE1006:Стили именования")]
