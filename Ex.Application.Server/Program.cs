@@ -4,9 +4,6 @@ using Ex.Plugin.Log;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ex.Application.Server
 {
@@ -17,6 +14,7 @@ namespace Ex.Application.Server
             var plugins = ExObject.Instantiate<ExPluginObject>();
             if( plugins != null)
             {
+                plugins.Subscribe( ( x ) => Console.WriteLine( x ) );
                 plugins.Load( Directory.GetCurrentDirectory() );
 
                 Console.WriteLine($"Loaded plugins count: {plugins.Count()}");

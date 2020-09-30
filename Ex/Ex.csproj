@@ -68,6 +68,7 @@
     <Compile Include="ExObject.cs" />
     <Compile Include="ExObjectManager.cs" />
     <Compile Include="ExRequiredAttributeController.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Plug\ExPluginLoader.cs" />
     <Compile Include="Plug\ExPluginObject.cs" />
     <Compile Include="Plug\IExPlugin.cs" />

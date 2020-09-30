@@ -53,14 +53,6 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ex">
-      <HintPath>..\ExLibrary_x64\Ex.dll</HintPath>
-    </Reference>
-    <Reference Include="Ex.Plugin.Log">
-      <HintPath>..\ExLibrary_x64\plugins\Ex.Plugin.Log.dll</HintPath>
-      <Private>True</Private>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -71,11 +63,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ex.Plugin.Log\Ex.Plugin.Log.csproj">
+      <Project>{a0e6a95a-a604-4ad3-8559-670e0981fe60}</Project>
+      <Name>Ex.Plugin.Log</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ex\Ex.csproj">
+      <Project>{1a95c169-fc6d-45f3-95a6-4ee57a97611f}</Project>
+      <Name>Ex</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
