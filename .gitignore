@@ -20,6 +20,9 @@
 [Rr]eleases/
 x64/
 x86/
+ExLibrary/
+ExLibrary_x64/
+ExApps_x64
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
 bld/
