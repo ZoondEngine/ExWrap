@@ -12,23 +12,20 @@ namespace Ex.Plugin.Arg
     {
         public T As<T>() where T : IExPlugin
         {
-            throw new NotImplementedException();
+            if ( typeof( T ) != GetType() )
+                return default;
+
+            return ( T ) ( object ) this;
         }
 
         public string GetIdentifier()
-        {
-            throw new NotImplementedException();
-        }
+            => "Ex.Plugin.Arg";
 
-        public string GetName()
-        {
-            throw new NotImplementedException();
-        }
+        public string GetName() 
+            => "Ex.Arg";
 
         public string GetVersion()
-        {
-            throw new NotImplementedException();
-        }
+            => "1.0.0.0";
 
         public void OnLoad()
         {

@@ -41,6 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Arg.cs" />
+    <Compile Include="Core\Lexer.cs" />
+    <Compile Include="Core\LexerBehaviours\StoreUpdateBehaviour.cs" />
+    <Compile Include="Core\Store.cs" />
     <Compile Include="ExArgPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -50,8 +54,6 @@
       <Name>Ex</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Core\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
