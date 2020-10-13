@@ -4,49 +4,33 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A0E6A95A-A604-4AD3-8559-670E0981FE60}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Ex.Plugin.Log</RootNamespace>
-    <AssemblyName>Ex.Plugin.Log</AssemblyName>
+    <ProjectGuid>{EF148A2F-77D7-406E-A1D9-7D4FF6BE7F36}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Ex.Application.Gilneas.Hasher</RootNamespace>
+    <AssemblyName>Ex.Application.Gilneas.Hasher</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\ExLibrary\plugins\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>..\ExLibrary_x64\plugins\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <OutputPath>bin\x64\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -59,24 +43,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Behaviours\LogWriteBehaviour.cs" />
-    <Compile Include="ExLogObject.cs" />
-    <Compile Include="ILoggableObject.cs" />
-    <Compile Include="LogElement.cs" />
-    <Compile Include="LogExPlugin.cs" />
+    <Compile Include="Core\HashObject.cs" />
+    <Compile Include="Core\TerminalObject.cs" />
+    <Compile Include="Core\Command\Actions\Reading.cs" />
+    <Compile Include="Core\Command\ReadBehaviour.cs" />
+    <Compile Include="Core\Command\WriteBehaviour.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ex.Plugin.Log\Ex.Plugin.Log.csproj">
+      <Project>{a0e6a95a-a604-4ad3-8559-670e0981fe60}</Project>
+      <Name>Ex.Plugin.Log</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Ex\Ex.csproj">
       <Project>{1a95c169-fc6d-45f3-95a6-4ee57a97611f}</Project>
       <Name>Ex</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>del Ex.dll
-del Ex.pdb
-del Ex.Plugin.Log.pdb</PostBuildEvent>
-  </PropertyGroup>
 </Project>

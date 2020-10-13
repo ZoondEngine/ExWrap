@@ -7,7 +7,7 @@ namespace Ex
 {
     public class ExObject
     {
-        private ConcurrentBag<ExBehaviour> m_Behaviors { get; set; } = new ConcurrentBag<ExBehaviour>();
+        private ConcurrentBag<ExBehaviour> m_Behaviours { get; set; } = new ConcurrentBag<ExBehaviour>();
         private string m_Tag { get; set; }
 
         public ExObject()
@@ -35,17 +35,12 @@ namespace Ex
 
         public T AddComponent<T>() where T : ExBehaviour, new()
         {
-            var obj = new T
-            {
-                ParentObject = this
-            };
-            obj.Awake();
-
+            var obj = new T();
             AddComponentByTypeInstance_Internal( obj );
             return obj;
         }
         public T GetComponent<T>() where T : ExBehaviour
-            => ( T )m_Behaviors.FirstOrDefault( ( x ) => x.GetType() == typeof( T ) );
+            => ( T )m_Behaviours.FirstOrDefault( ( x ) => x.GetType() == typeof( T ) );
         public T[] GetAllComponents<T>() where T : ExBehaviour
         {
             List<T> premade = new List<T>();
@@ -67,7 +62,7 @@ namespace Ex
                 obj.BeforeDestroy();
                 obj.Destroy();
 
-                m_Behaviors = new ConcurrentBag<ExBehaviour>( m_Behaviors.Except( new[] { obj } ) );
+                m_Behaviours = new ConcurrentBag<ExBehaviour>( m_Behaviours.Except( new[] { obj } ) );
             }
         }
 
@@ -85,11 +80,13 @@ namespace Ex
 
         private void AddComponentByTypeInstance_Internal( ExBehaviour instance )
         {
+            instance.ParentObject = this;
             instance.Awake();
-            m_Behaviors.Add( instance );
+
+            m_Behaviours.Add( instance );
         }
         public ConcurrentBag<ExBehaviour> GetInternalBehaviours()
-            => m_Behaviors;
+            => m_Behaviours;
         private void SetTag( string tag )
             => m_Tag = tag;
     }

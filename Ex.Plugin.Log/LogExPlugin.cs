@@ -1,11 +1,13 @@
-﻿using Ex.Plug;
-
-using System;
+﻿using Ex.Exceptions;
+using Ex.Plug;
+using Ex.Plugin.Log.Behaviours;
 
 namespace Ex.Plugin.Log
 {
-    public class LogExPlugin : IExPlugin
+    public class LogExPlugin : IExPlugin, ILoggableObject
     {
+        private ExLogObject m_Log;
+
         public T As<T>() where T : IExPlugin
         {
             if ( typeof( T ) != GetType() )
@@ -25,19 +27,28 @@ namespace Ex.Plugin.Log
 
         public void OnLoad()
         {
-            Console.WriteLine($"Addon: {GetName()}(v.{GetVersion()}--{GetIdentifier()}) loaded!");
+            m_Log = ExObject.Instantiate<ExLogObject>();
+            m_Log.Writer().Trace( "Logging plugin successfully loaded" );
         }
 
         public void OnUnload()
         {
-            Console.WriteLine( $"Addon: {GetName()}(v.{GetVersion()}--{GetIdentifier()}) unloaded!" );
+            if(m_Log != null)
+            {
+                m_Log.Writer().BeforeDestroy();
+                m_Log.Writer().TraceImmediate("Logging plugin unloading");
+                m_Log.Writer().Destroy();
+            }
         }
 
-        public void ToConsole(string message)
+        public LogWriteBehaviour Writer()
         {
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine($"{DateTime.UtcNow}: {message}");
-            Console.ResetColor();
+            if(m_Log != null)
+            {
+                return m_Log.Writer();
+            }
+
+            throw new ExException( "Can't get writer before installing plugin!" );
         }
     }
 }

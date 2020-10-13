@@ -4,6 +4,7 @@ using Ex.Plugin.Log;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading;
 
 namespace Ex.Application.Server
 {
@@ -22,7 +23,7 @@ namespace Ex.Application.Server
                 var logger = plugins.Get<LogExPlugin>();
                 if(logger != null)
                 {
-                    logger.ToConsole( "Testim ebat" );
+                    logger.Writer().ErrorImmediate("testim ebat");
                 }
             }
 
