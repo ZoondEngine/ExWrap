@@ -154,8 +154,8 @@ namespace Ex.Application.Gilneas.Hasher
                         {
                             currentStopwatch.Stop();
 
-                            writer.Debug( $"File = '{clearFile}' hashed" );
-                            writer.Debug( $"Estimated time = '{currentStopwatch.ElapsedMilliseconds}ms'" );
+                            writer.Warning( $"File = '{clearFile}' hashed" );
+                            writer.Warning( $"Estimated time = '{currentStopwatch.ElapsedMilliseconds}ms'" );
 
                             currentStopwatch.Reset();
                         }
