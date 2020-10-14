@@ -4,7 +4,7 @@ using Ex.Plugin.Log.Behaviours;
 
 namespace Ex.Plugin.Log
 {
-    public class LogExPlugin : IExPlugin, ILoggableObject
+    public class LogExPlugin : IExPlugin
     {
         private ExLogObject m_Log;
 

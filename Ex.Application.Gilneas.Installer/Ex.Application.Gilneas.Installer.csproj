@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,6 +56,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Content\Controls\InstallControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Content\Controls\SelectionControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -63,6 +72,21 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Content\Controls\InstallControl.xaml.cs">
+      <DependentUpon>InstallControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Controls\SelectionControl.xaml.cs">
+      <DependentUpon>SelectionControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Graphics\EffectObject.cs" />
+    <Compile Include="Core\Install\IInstallScript.cs" />
+    <Compile Include="Core\Install\InstallerObject.cs" />
+    <Compile Include="Core\Install\InstallStep.cs" />
+    <Compile Include="Core\Install\InstallStepList.cs" />
+    <Compile Include="Core\Install\OldInstaller.cs" />
+    <Compile Include="Core\Install\Scripts\CreateShortcutInstallScript.cs" />
+    <Compile Include="Core\Install\Scripts\SetRegistryInstallScript.cs" />
+    <Compile Include="Entry.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -93,6 +117,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Basic\icon_close_hovered.png" />
+    <Resource Include="Resources\Icons\Basic\icon_close_normal.png" />
+    <Resource Include="Resources\Icons\Basic\icon_minimize_hovered.png" />
+    <Resource Include="Resources\Icons\Basic\icon_minimize_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\lich_king_installer.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ex\Ex.csproj">
+      <Project>{1a95c169-fc6d-45f3-95a6-4ee57a97611f}</Project>
+      <Name>Ex</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
