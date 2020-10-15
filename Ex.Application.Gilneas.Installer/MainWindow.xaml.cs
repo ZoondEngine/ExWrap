@@ -1,29 +1,21 @@
-﻿using Ex.Application.Gilneas.Installer.Content.Graphics;
-
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using WinForms = System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System;
-using Ex.Application.Gilneas.Installer.Content.Controls;
+using Ex.Application.Gilneas.Installer.Core.Installer;
 
 namespace Ex.Application.Gilneas.Installer
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, IChangable
     {
         public MainWindow()
         {
-            Entry.Execute();
+            Entry.Execute( this );
 
             InitializeComponent();
 
-            Entry.Installer().Target( this );
-
-            ChangeContent( new SelectionControl() );
+            ChangeContent( Entry.Installer().Current().Child() );
         }
 
         private void Image_MouseEnter( object sender, MouseEventArgs e )
@@ -31,11 +23,8 @@ namespace Ex.Application.Gilneas.Installer
             var image = ( Image ) sender;
             if ( image != null )
             {
-                var effect = ExObject.FindObjectOfType<EffectObject>();
-                if ( effect != null )
-                {
-                    effect.SetDropShadow( image, Colors.White, 0.8f );
-                }
+                var effect = Entry.Effect();
+                effect.SetDropShadow( image, Colors.White, 0.8f );
             }
         }
 
@@ -77,7 +66,7 @@ namespace Ex.Application.Gilneas.Installer
             try
             {
                 if ( e.ChangedButton == MouseButton.Left )
-                    this.DragMove();
+                    DragMove();
             }
             catch ( Exception ) { }
         }

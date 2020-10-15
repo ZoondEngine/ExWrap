@@ -126,10 +126,10 @@ namespace Ex.Application.Gilneas.Hasher
 
                 try
                 {
-                    foreach ( var file in files )
+                    files.AsParallel().ForAll( ( file ) =>
                     {
                         if ( file.Contains( ".manifest" ) || file.Contains( ".inc" ) || file.Contains( "Ex" ) )
-                            continue;
+                            return;
 
                         var clearFile = file.Replace( Environment.CurrentDirectory, "" );
 
@@ -155,11 +155,11 @@ namespace Ex.Application.Gilneas.Hasher
                             currentStopwatch.Stop();
 
                             writer.Warning( $"File = '{clearFile}' hashed" );
-                            writer.Warning( $"Estimated time = '{currentStopwatch.ElapsedMilliseconds}ms'" );
+                            writer.Warning( $"Elapsed time = '{currentStopwatch.ElapsedMilliseconds}ms'" );
 
                             currentStopwatch.Reset();
                         }
-                    }
+                    } );
                 }
                 catch(Exception ex)
                 {

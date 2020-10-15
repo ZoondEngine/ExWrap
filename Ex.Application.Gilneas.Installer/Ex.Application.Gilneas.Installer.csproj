@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Forms" />
@@ -79,13 +82,21 @@
       <DependentUpon>SelectionControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Content\Graphics\EffectObject.cs" />
-    <Compile Include="Core\Install\IInstallScript.cs" />
-    <Compile Include="Core\Install\InstallerObject.cs" />
-    <Compile Include="Core\Install\InstallStep.cs" />
-    <Compile Include="Core\Install\InstallStepList.cs" />
-    <Compile Include="Core\Install\OldInstaller.cs" />
-    <Compile Include="Core\Install\Scripts\CreateShortcutInstallScript.cs" />
-    <Compile Include="Core\Install\Scripts\SetRegistryInstallScript.cs" />
+    <Compile Include="Core\API\Behaviours\ApiAccessorBehaviour.cs" />
+    <Compile Include="Core\API\ApiCoreObject.cs" />
+    <Compile Include="Core\API\Behaviours\Utilities\Builder.cs" />
+    <Compile Include="Core\API\Behaviours\Utilities\Router.cs" />
+    <Compile Include="Core\API\ManifestContainer.cs" />
+    <Compile Include="Core\API\ManifestElement.cs" />
+    <Compile Include="Core\Installer\Behaviours\ShellInstallExecutingBehaviour.cs" />
+    <Compile Include="Core\Installer\IChangable.cs" />
+    <Compile Include="Core\Installer\IFinalInstallElement.cs" />
+    <Compile Include="Core\Installer\InstallCoreObject.cs" />
+    <Compile Include="Core\Installer\InstallElement.cs" />
+    <Compile Include="Core\Installer\IShell.cs" />
+    <Compile Include="Core\Installer\Shells\CreateShortcutShell.cs" />
+    <Compile Include="Core\Language\Behaviours\LangStorageBehaviour.cs" />
+    <Compile Include="Core\Language\LanguageCoreObject.cs" />
     <Compile Include="Entry.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -110,6 +121,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

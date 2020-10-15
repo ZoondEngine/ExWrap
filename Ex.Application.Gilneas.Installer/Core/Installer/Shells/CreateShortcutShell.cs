@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 
-namespace Ex.Application.Gilneas.Installer.Core.Install.Scripts
+namespace Ex.Application.Gilneas.Installer.Core.Installer.Shells
 {
     [ComImport]
     [Guid( "00021401-0000-0000-C000-000000000046" )]
@@ -37,19 +37,16 @@ namespace Ex.Application.Gilneas.Installer.Core.Install.Scripts
         void SetPath( [MarshalAs( UnmanagedType.LPWStr )] string pszFile );
     }
 
-    public class CreateShortcutInstallScript : IInstallScript
+    public class CreateShortcutShell : IShell
     {
         public bool Execute()
         {
             try
             {
                 IShellLink link = ( IShellLink ) new ShellLink();
-
-                // setup shortcut information
                 link.SetDescription( "Firelands launcher" );
                 link.SetPath( Entry.GetInstallFolder().Replace( "/", "\\" ) + "\\Firelands.exe" );
 
-                // save it
                 IPersistFile file = ( IPersistFile ) link;
                 string desktopPath = Environment.GetFolderPath( Environment.SpecialFolder.DesktopDirectory );
                 file.Save( Path.Combine( desktopPath, "Firelands Launcher.lnk" ), false );
@@ -62,7 +59,7 @@ namespace Ex.Application.Gilneas.Installer.Core.Install.Scripts
             }
         }
 
-        public string Name()
+        public string Description()
             => "creating-shortcuts";
     }
 }

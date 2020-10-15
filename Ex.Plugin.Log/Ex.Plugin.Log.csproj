@@ -61,7 +61,6 @@
   <ItemGroup>
     <Compile Include="Behaviours\LogWriteBehaviour.cs" />
     <Compile Include="ExLogObject.cs" />
-    <Compile Include="ILoggableObject.cs" />
     <Compile Include="LogElement.cs" />
     <Compile Include="LogExPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

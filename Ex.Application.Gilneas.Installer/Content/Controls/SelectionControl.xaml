@@ -7,12 +7,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Width="323" Height="380">
     <Grid>
-        <Button Content="Обзор..." HorizontalAlignment="Left" Margin="218,132,0,0" VerticalAlignment="Top" Width="94" Height="31" BorderBrush="#1909374D" Background="#FF060917" Foreground="#CC00AEFF" Padding="-2,-2,-1,-1" Click="Button_Click" OverridesDefaultStyle="True" Cursor="Hand"/>
+        <Button Name="OpenFileDialog" Content="Обзор..." HorizontalAlignment="Left" Margin="218,132,0,0" VerticalAlignment="Top" Width="94" Height="31" BorderBrush="#1909374D" Background="#FF060917" Foreground="#CC00AEFF" Padding="-2,-2,-1,-1" Click="Button_Click" OverridesDefaultStyle="True" Cursor="Hand"/>
         <TextBox x:Name="InstallFolder" HorizontalAlignment="Left" Height="31" Margin="11,96,0,0" TextWrapping="Wrap" Text="C://Program Files(x86)/Firelands" VerticalAlignment="Top" Width="301" IsReadOnly="True" BorderBrush="#0CEAEAEA" Background="#FF060917" Foreground="#CCD8D8D8" Padding="6,6,6,6" SelectionBrush="White" />
-        <Button Content="Установить" HorizontalAlignment="Left" Margin="215,338,0,0" VerticalAlignment="Top" Width="94" Height="31" Background="#CC00AEFF" BorderBrush="#CC075A81" Foreground="White" OverridesDefaultStyle="True" Cursor="Hand" Click="Button_Click_2"/>
-        <Label Content="Выберите путь установки: " HorizontalAlignment="Left" Margin="11,67,0,0" VerticalAlignment="Top" Foreground="#FFFFFCFC" FontSize="14"/>
-        <Button Content="Выход" HorizontalAlignment="Left" Margin="11,339,0,0" VerticalAlignment="Top" Width="94" Height="31" BorderBrush="#1909374D" Background="#FF060917" Foreground="#CC00AEFF" Padding="-2,-2,-1,-1" OverridesDefaultStyle="True" Cursor="Hand" Click="Button_Click_1"/>
-        <Label Content="Общий размер: 34МБ" HorizontalAlignment="Left" Margin="11,127,0,0" VerticalAlignment="Top" Foreground="#FF383838" FontSize="10"/>
+        <Button Name="InstallRun" Content="Установить" HorizontalAlignment="Left" Margin="215,338,0,0" VerticalAlignment="Top" Width="94" Height="31" Background="#CC00AEFF" BorderBrush="#CC075A81" Foreground="White" OverridesDefaultStyle="True" Cursor="Hand" Click="Button_Click_2"/>
+        <Label Name="ChoosePath" Content="Выберите путь установки: " HorizontalAlignment="Left" Margin="11,67,0,0" VerticalAlignment="Top" Foreground="#FFFFFCFC" FontSize="14"/>
+        <Button Name="Exit" Content="Выход" HorizontalAlignment="Left" Margin="11,339,0,0" VerticalAlignment="Top" Width="94" Height="31" BorderBrush="#1909374D" Background="#FF060917" Foreground="#CC00AEFF" Padding="-2,-2,-1,-1" OverridesDefaultStyle="True" Cursor="Hand" Click="Button_Click_1"/>
+        <Label Name="SizeDesc" Content="Общий размер: 34МБ" HorizontalAlignment="Left" Margin="11,127,0,0" VerticalAlignment="Top" Foreground="#FF6A6969" FontSize="10"/>
 
     </Grid>
 </UserControl>

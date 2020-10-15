@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Ex.Application.Gilneas.Installer.Core.Language;
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
@@ -18,13 +20,21 @@ namespace Ex.Application.Gilneas.Installer.Content.Controls
             InitializeComponent();
 
             InstallFolder.Text = Entry.GetInstallFolder();
+
+            var lang = Entry.Language();
+
+            OpenFileDialog.Content = lang.DefWord( "OpenFileDialog" );
+            InstallRun.Content = lang.DefWord( "InstallRun" );
+            ChoosePath.Content = lang.DefWord( "ChoosePath" );
+            Exit.Content = lang.DefWord( "Exit" );
+            SizeDesc.Content = LanguageCoreObject.Replace( lang.DefWord( "SizeDesc" ), "%size%", Entry.Api().Humanized(17311754260L) );
         }
 
         private void Button_Click( object sender, RoutedEventArgs e )
         {
             using ( var dialog = new WinForms.FolderBrowserDialog() )
             {
-                dialog.Description = "Путь установки: ";
+                dialog.Description = Entry.Language().DefWord("ChoosePath");
                 dialog.SelectedPath = Entry.GetInstallFolder();
                 dialog.ShowNewFolderButton = true;
 
@@ -39,8 +49,9 @@ namespace Ex.Application.Gilneas.Installer.Content.Controls
 
         private void Button_Click_2( object sender, RoutedEventArgs e )
         {
-            var main = ( MainWindow ) Entry.Installer().Target();
-            main.ChangeContent( new InstallControl() );
+            var main = Entry.Window();
+            main.ChangeContent( Entry.Installer().Next().Child() );
+            Entry.Installer().Install();
         }
 
         private void Button_Click_1( object sender, RoutedEventArgs e )

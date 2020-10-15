@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ex.Application.Gilneas.Installer"
         mc:Ignorable="d"
-        Title="Firelands" Height="469" Width="572" ResizeMode="NoResize" WindowStyle="None">
+        Title="Firelands" Height="469" Width="687" ResizeMode="NoResize" WindowStyle="None">
+    <Window.Effect>
+        <DropShadowEffect BlurRadius="30" ShadowDepth="10" RenderingBias="Quality"/>
+    </Window.Effect>
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -14,16 +17,16 @@
             </LinearGradientBrush>
         </Grid.Background>
 
-        <Border BorderBrush="#0CEAEAEA" BorderThickness="1" HorizontalAlignment="Left" Height="469" VerticalAlignment="Top" Width="572" MouseDown="Border_MouseDown_1"/>
+        <Border BorderBrush="#0CEAEAEA" BorderThickness="1" HorizontalAlignment="Left" Height="469" VerticalAlignment="Top" Width="687" MouseDown="Border_MouseDown_1"/>
 
-        <Border BorderBrush="#33F1F1F1" BorderThickness="0,0,0,1" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="572" Background="#2D939393" MouseDown="Border_MouseDown"/>
-        <Image HorizontalAlignment="Left" Height="20" Margin="541,11,0,0" VerticalAlignment="Top" Width="20" Source="Resources/Icons/Basic/icon_close_normal.png" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseDown="Image_MouseDown"/>
-        <Image HorizontalAlignment="Left" Height="20" Margin="517,16,0,0" VerticalAlignment="Top" Width="20" Source="Resources/Icons/Basic/icon_minimize_normal.png" MouseDown="Minimize_Down" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
+        <Border BorderBrush="#33F1F1F1" BorderThickness="0,0,0,1" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="687" Background="#2D939393" MouseDown="Border_MouseDown"/>
+        <Image HorizontalAlignment="Left" Height="20" Margin="658,11,0,0" VerticalAlignment="Top" Width="20" Source="Resources/Icons/Basic/icon_close_normal.png" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseDown="Image_MouseDown"/>
+        <Image HorizontalAlignment="Left" Height="20" Margin="634,16,0,0" VerticalAlignment="Top" Width="20" Source="Resources/Icons/Basic/icon_minimize_normal.png" MouseDown="Minimize_Down" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
         <Label Content="Firelands" HorizontalAlignment="Left" Margin="7,4,0,0" VerticalAlignment="Top" Foreground="#FFFFFCFC" FontSize="20"/>
-        <Image HorizontalAlignment="Left" Height="420" Margin="328,49,0,0" VerticalAlignment="Top" Width="243" Source="Resources/Images/lich_king_installer.jpg" Stretch="UniformToFill"/>
-        <Border BorderBrush="#0CEAEAEA" BorderThickness="1" HorizontalAlignment="Left" Height="422" Margin="326,48,0,-1" VerticalAlignment="Top" Width="246" Background="#6602080F" MouseDown="Border_MouseDown_2"/>
-        <Grid Name="ContentHolder" HorizontalAlignment="Left" Height="380" Margin="0,89,0,0" VerticalAlignment="Top" Width="323" MouseDown="ContentHolder_MouseDown"/>
-        <Label Content="Установка" HorizontalAlignment="Left" Margin="10,53,0,0" VerticalAlignment="Top" Foreground="#FFFFFCFC" FontSize="14" FontWeight="Bold"/>
+        <Image HorizontalAlignment="Left" Height="420" Margin="444,49,0,0" VerticalAlignment="Top" Width="243" Source="Resources/Images/lich_king_installer.jpg" Stretch="UniformToFill"/>
+        <Border BorderBrush="#0CEAEAEA" BorderThickness="1" HorizontalAlignment="Left" Height="422" Margin="442,48,-1,-1" VerticalAlignment="Top" Width="246" Background="#6602080F" MouseDown="Border_MouseDown_2"/>
+        <Grid Name="ContentHolder" HorizontalAlignment="Left" Height="421" Margin="0,48,0,0" VerticalAlignment="Top" Width="439" MouseDown="ContentHolder_MouseDown"/>
+        <Label Content="v. 1.0.375.16782" HorizontalAlignment="Left" Margin="593,444,0,-1" VerticalAlignment="Top" Foreground="#FF999999"/>
 
     </Grid>
 </Window>
