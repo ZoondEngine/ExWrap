@@ -128,7 +128,7 @@ namespace Ex.Application.Gilneas.Hasher
                 {
                     files.AsParallel().ForAll( ( file ) =>
                     {
-                        if ( file.Contains( ".manifest" ) || file.Contains( ".inc" ) || file.Contains( "Ex" ) )
+                        if ( file.Contains( ".manifest" ) || file.Contains( ".inc" ) || file.Contains( "Ex." ) )
                             return;
 
                         var clearFile = file.Replace( Environment.CurrentDirectory, "" );

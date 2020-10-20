@@ -48,7 +48,7 @@ namespace Ex.Application.Gilneas.Installer.Core.Language.Behaviours
                     [ "CalculateFreeSpace" ] = "Вычисление свободного места",
                     [ "DownloadFiles" ] = "Загрузка файлов",
                     [ "InstallProcess" ] = "Копирование файлов",
-                    [ "InstallCheck" ] = "Проверка файлов",
+                    [ "FinishInstallation" ] = "Завершение установки",
                     [ "InstallControlCancel" ] = "Отмена",
 
                 },
@@ -65,7 +65,7 @@ namespace Ex.Application.Gilneas.Installer.Core.Language.Behaviours
                     [ "CalculateFreeSpace" ] = "Calculate free space",
                     [ "DownloadFiles" ] = "Download files",
                     [ "InstallProcess" ] = "Copy new files",
-                    [ "InstallCheck" ] = "Check install",
+                    [ "FinishInstallation" ] = "Finishing installation",
                     [ "InstallControlCancel" ] = "Cancel",
                 }
             };

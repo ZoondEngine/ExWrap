@@ -45,11 +45,11 @@ namespace Ex.Application.Gilneas.Installer.Core.Installer.Shells
             {
                 IShellLink link = ( IShellLink ) new ShellLink();
                 link.SetDescription( "Firelands launcher" );
-                link.SetPath( Entry.GetInstallFolder().Replace( "/", "\\" ) + "\\Firelands.exe" );
+                link.SetPath( Entry.GetInstallFolder().Replace( "/", "\\" ) + Entry.GetExecutable() );
 
                 IPersistFile file = ( IPersistFile ) link;
                 string desktopPath = Environment.GetFolderPath( Environment.SpecialFolder.DesktopDirectory );
-                file.Save( Path.Combine( desktopPath, "Firelands Launcher.lnk" ), false );
+                file.Save( Path.Combine( desktopPath, "Firelands.lnk" ), false );
 
                 return true;
             }

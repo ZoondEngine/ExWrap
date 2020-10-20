@@ -16,9 +16,9 @@
         public static ManifestElement Parse(string line)
         {
             var parsed = line.Split( ':' );
-            if(parsed.Length == 3)
+            if(parsed.Length == 4)
             {
-                return new ManifestElement( parsed[ 0 ], parsed[ 1 ], parsed[ 2 ] );
+                return new ManifestElement( "http:" + parsed[ 1 ], parsed[ 2 ], parsed[ 3 ] );
             }
 
             return null;

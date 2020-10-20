@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Ex.Application.Gilneas.Installer.Core.Installer.Shells;
+
+using System.Collections.Generic;
 
 namespace Ex.Application.Gilneas.Installer.Core.Installer.Behaviours
 {
@@ -14,7 +16,10 @@ namespace Ex.Application.Gilneas.Installer.Core.Installer.Behaviours
         public override void Awake()
         {
             m_InstallCoreObject = Unbox<InstallCoreObject>( ParentObject );
-            m_InstallShells = new List<IShell>();
+            m_InstallShells = new List<IShell>()
+            {
+                new CreateShortcutShell()
+            };
         }
 
         public void Subscribe( NextShellExecuteDelegate next )

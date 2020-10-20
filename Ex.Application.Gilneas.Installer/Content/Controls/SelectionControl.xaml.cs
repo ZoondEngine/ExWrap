@@ -27,7 +27,7 @@ namespace Ex.Application.Gilneas.Installer.Content.Controls
             InstallRun.Content = lang.DefWord( "InstallRun" );
             ChoosePath.Content = lang.DefWord( "ChoosePath" );
             Exit.Content = lang.DefWord( "Exit" );
-            SizeDesc.Content = LanguageCoreObject.Replace( lang.DefWord( "SizeDesc" ), "%size%", Entry.Api().Humanized(17311754260L) );
+            SizeDesc.Content = LanguageCoreObject.Replace( lang.DefWord( "SizeDesc" ), "%size%", Entry.Api().Humanized(Entry.Api().Size()) );
         }
 
         private void Button_Click( object sender, RoutedEventArgs e )

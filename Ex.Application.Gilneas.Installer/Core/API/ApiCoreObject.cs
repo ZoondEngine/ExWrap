@@ -4,6 +4,7 @@ using Ex.Attributes;
 using Ex.Exceptions;
 
 using System;
+using System.Threading.Tasks;
 
 namespace Ex.Application.Gilneas.Installer.Core.API
 {
@@ -16,7 +17,8 @@ namespace Ex.Application.Gilneas.Installer.Core.API
     {
         GetLoaderInc,
         GetLoaderManifest,
-        GetLoaderArchive
+        GetLoaderArchive,
+        GetFile
     }
 
     [RequiredBehaviour(typeof(ApiAccessorBehaviour))]
@@ -40,33 +42,43 @@ namespace Ex.Application.Gilneas.Installer.Core.API
             : base(tag)
         { }
 
-        public async void LoadManifest()
-        {
-            var manifestFile = await Accessor().Builder<string>().GetAsync( Router.Url( Uri.GetLoaderManifest ) );
+        public async void ManifestAsync()
+            => await Task.Run( () => Manifest() );
+        public async void IncludeAsync()
+            => await Task.Run( () => Include() );
 
-            if ( Accessor().Empty( manifestFile ) )
+        public void Manifest()
+        {
+            var manifestFile = Accessor().Builder<string>().Request( Router.Url( Uri.GetLoaderManifest, Entry.Settings().Read<bool>("Testing", "Beta") ) ).First();
+
+            if ( Accessor().Empty( manifestFile.Content ) )
             {
                 throw new ExException( "Can't download required files!" );
             }
 
-            m_Manifest = new ManifestContainer(manifestFile.Split('\n'));
+            m_Manifest = new ManifestContainer(manifestFile.Content.Split('\r', '\n'));
         }
 
-        public async void LoadInclude()
+        public void Include()
         {
-            var includeFile = await Accessor().Builder<string>().GetAsync( Router.Url( Uri.GetLoaderInc ) );
-            if ( Accessor().Empty( includeFile ) )
+            var includeFile = Accessor().Builder<string>().Request( Router.Url( Uri.GetLoaderInc, Entry.Settings().Read<bool>( "Testing", "Beta" ) ) ).First();
+            if(includeFile.Status != 600)
+            {
+                throw new ExException( includeFile.Message );
+            }
+
+            if ( Accessor().Empty( includeFile.Content ) )
             {
                 throw new ExException( "Can't download required files!" );
             }
 
-            var includeSplitted = includeFile.Split( ':' );
+            var includeSplitted = includeFile.Content.Split( ':' );
             if ( includeSplitted.Length != 2 )
             {
                 throw new ExException( "Invalid include file!" );
             }
 
-            if ( !int.TryParse( includeSplitted[ 0 ], out var files ) || long.TryParse( includeSplitted[ 1 ], out var size ) )
+            if ( !int.TryParse( includeSplitted[ 0 ], out var files ) || !long.TryParse( includeSplitted[ 1 ], out var size ) )
             {
                 throw new ExException( "Invalid include file format!" );
             }
@@ -77,7 +89,7 @@ namespace Ex.Application.Gilneas.Installer.Core.API
             }
         }
 
-        public ManifestContainer Manifest()
+        public ManifestContainer Container()
             => m_Manifest;
         public int Files()
             => m_Files;

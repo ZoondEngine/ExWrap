@@ -10,13 +10,13 @@ namespace Ex.Application.Gilneas.Installer.Core.API.Behaviours.Utilities
 {
     public class Builder<T>
     {
-        private List<T> m_Response { get; set; }
+        private List<Response<T>> m_Response { get; set; }
         private HttpClient m_HttpClient { get; set; }
         private Headers m_Request { get; set; }
 
         public Builder()
         {
-            m_Response = new List<T>();
+            m_Response = new List<Response<T>>();
             m_HttpClient = new HttpClient();
             m_Request = new Headers();
         }
@@ -71,7 +71,7 @@ namespace Ex.Application.Gilneas.Installer.Core.API.Behaviours.Utilities
                         m_Request.Clear();
                     }
 
-                    var response = JsonConvert.DeserializeObject<T[]>( awaiter.GetAwaiter().GetResult() );
+                    var response = JsonConvert.DeserializeObject<Response<T>[]>( awaiter.GetAwaiter().GetResult() );
 
                     foreach ( var item in response )
                     {
@@ -80,7 +80,7 @@ namespace Ex.Application.Gilneas.Installer.Core.API.Behaviours.Utilities
                 }
                 catch ( Exception )
                 {
-                    var response = JsonConvert.DeserializeObject<T>( awaiter.GetAwaiter().GetResult() );
+                    var response = JsonConvert.DeserializeObject<Response<T>>( awaiter.GetAwaiter().GetResult() );
 
                     m_Response.Add( response );
                 }
@@ -103,19 +103,19 @@ namespace Ex.Application.Gilneas.Installer.Core.API.Behaviours.Utilities
             return this;
         }
 
-        public List<T> Response()
+        public List<Response<T>> Response()
         {
             return m_Response;
         }
-        public T First()
+        public Response<T> First()
         {
             if ( Response().Count > 0 )
                 return Response()[ 0 ];
 
-            return ( T ) ( object ) null;
+            return ( Response<T> ) ( object ) null;
         }
 
-        public Builder<T> Modify( int index, Action<T> method )
+        public Builder<T> Modify( int index, Action<Response<T>> method )
         {
             if ( m_Response.Count > index )
             {
@@ -124,7 +124,7 @@ namespace Ex.Application.Gilneas.Installer.Core.API.Behaviours.Utilities
 
             return this;
         }
-        public Builder<T> ModifyAll( Action<T> method )
+        public Builder<T> ModifyAll( Action<Response<T>> method )
         {
             foreach ( var res in m_Response )
             {
@@ -133,7 +133,7 @@ namespace Ex.Application.Gilneas.Installer.Core.API.Behaviours.Utilities
 
             return this;
         }
-        public Builder<T> ModifyAllAsync( Action<T> method )
+        public Builder<T> ModifyAllAsync( Action<Response<T>> method )
         {
             var task = new Task( () =>
             {
