@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D0239495-873A-4281-977B-256316730DFB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Ex.Application.Firelands.Service</RootNamespace>
+    <AssemblyName>Ex.Application.Firelands.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Driver\Behaviours\CommunicateData\NtStatus.cs" />
+    <Compile Include="Core\Driver\Behaviours\DriverCommunicateBehaviour.cs" />
+    <Compile Include="Core\Driver\Behaviours\DriverHeartbeatBehaviour.cs" />
+    <Compile Include="Core\Driver\Behaviours\DriverLoadingBehaviour.cs" />
+    <Compile Include="Core\Driver\ExDriverObject.cs" />
+    <Compile Include="Core\Driver\IoControlCode.cs" />
+    <Compile Include="Core\Driver\Structures\BaseCommunicable.cs" />
+    <Compile Include="Core\Driver\Structures\BaseRequest.cs" />
+    <Compile Include="Core\Driver\Structures\BaseResponse.cs" />
+    <Compile Include="Core\Driver\Structures\Heartbeat\HeartbeatRequest.cs" />
+    <Compile Include="Core\Driver\Structures\Heartbeat\HeartbeatResponse.cs" />
+    <Compile Include="Core\Driver\Structures\Start\StartRequest.cs" />
+    <Compile Include="Core\Driver\Structures\Start\StartResponse.cs" />
+    <Compile Include="Core\Driver\Structures\Stop\StopRequest.cs" />
+    <Compile Include="Core\Driver\Structures\Stop\StopResponse.cs" />
+    <Compile Include="UpdaterAgentService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UpdaterAgentService.Designer.cs">
+      <DependentUpon>UpdaterAgentService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Core\Update\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ex.Plugin.Log\Ex.Plugin.Log.csproj">
+      <Project>{a0e6a95a-a604-4ad3-8559-670e0981fe60}</Project>
+      <Name>Ex.Plugin.Log</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ex\Ex.csproj">
+      <Project>{1a95c169-fc6d-45f3-95a6-4ee57a97611f}</Project>
+      <Name>Ex</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
