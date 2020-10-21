@@ -4,6 +4,9 @@
     {
         public ulong Signature = 0xDEADFACE;
 
-        public abstract bool Valid();
+        public virtual bool Valid()
+        {
+            return Signature == 0xDEADFACE;
+        }
     }
 }

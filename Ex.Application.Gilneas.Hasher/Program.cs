@@ -19,7 +19,7 @@ namespace Ex.Application.Gilneas.Hasher
 
         private static HashObject m_HashObject;
         private static TerminalObject m_TerminalObject;
-        private static string m_Url = "https://cdn.firelands.su/clients/";
+        private static string m_Url = "https://cdn.firelands.su/downloads/";
 
         static void Main( string[] args )
         {

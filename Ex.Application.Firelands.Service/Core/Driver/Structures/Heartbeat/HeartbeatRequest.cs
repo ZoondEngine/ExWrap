@@ -8,9 +8,14 @@ namespace Ex.Application.Firelands.Service.Core.Driver.Structures.Heartbeat
 {
     public class HeartbeatRequest : BaseRequest
     {
+        public int WowProcess;
+        public int ServiceProcess;
+
         public override bool Valid()
         {
-            throw new NotImplementedException();
+            return base.Valid()
+                && WowProcess != 0
+                && ServiceProcess != 0;
         }
     }
 }

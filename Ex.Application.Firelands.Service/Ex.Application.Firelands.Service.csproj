@@ -44,6 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Access\Behaviours\AccessExecutorBehaviour.cs" />
+    <Compile Include="Core\Access\Behaviours\AccessListenerBehaviour.cs" />
+    <Compile Include="Core\Access\ExAccessObject.cs" />
     <Compile Include="Core\Driver\Behaviours\CommunicateData\NtStatus.cs" />
     <Compile Include="Core\Driver\Behaviours\DriverCommunicateBehaviour.cs" />
     <Compile Include="Core\Driver\Behaviours\DriverHeartbeatBehaviour.cs" />
@@ -55,10 +58,6 @@
     <Compile Include="Core\Driver\Structures\BaseResponse.cs" />
     <Compile Include="Core\Driver\Structures\Heartbeat\HeartbeatRequest.cs" />
     <Compile Include="Core\Driver\Structures\Heartbeat\HeartbeatResponse.cs" />
-    <Compile Include="Core\Driver\Structures\Start\StartRequest.cs" />
-    <Compile Include="Core\Driver\Structures\Start\StartResponse.cs" />
-    <Compile Include="Core\Driver\Structures\Stop\StopRequest.cs" />
-    <Compile Include="Core\Driver\Structures\Stop\StopResponse.cs" />
     <Compile Include="UpdaterAgentService.cs">
       <SubType>Component</SubType>
     </Compile>
