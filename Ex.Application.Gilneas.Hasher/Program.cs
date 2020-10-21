@@ -122,8 +122,6 @@ namespace Ex.Application.Gilneas.Hasher
                 var files = Directory.GetFiles( dir, "*.*", SearchOption.AllDirectories );
                 files.Shuffle();
 
-                count = files.Length;
-
                 try
                 {
                     files.AsParallel().ForAll( ( file ) =>
@@ -131,6 +129,7 @@ namespace Ex.Application.Gilneas.Hasher
                         if ( file.Contains( ".manifest" ) || file.Contains( ".inc" ) || file.Contains( "Ex." ) )
                             return;
 
+                        count++;
                         var clearFile = file.Replace( Environment.CurrentDirectory, "" );
 
                         long currentSize = 0;
