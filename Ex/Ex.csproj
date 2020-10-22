@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\RequiredBehaviourAttribute.cs" />
+    <Compile Include="Crypto\HashObject.cs" />
     <Compile Include="ExBehaviour.cs" />
     <Compile Include="Exceptions\ExException.cs" />
     <Compile Include="Exceptions\GOMConcurrentException.cs" />

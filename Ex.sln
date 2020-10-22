@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex.Application.Server", "Ex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex.Plugin.Arg", "Ex.Plugin.Arg\Ex.Plugin.Arg.csproj", "{D4302332-4895-4EAE-B662-1FF3184EA2D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex.Application.Gilneas", "Ex.Application.Gilneas\Ex.Application.Gilneas.csproj", "{BAAFCBDA-C738-4CED-AB4D-735D20E57721}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex.Application.Gilneas.Hasher", "Ex.Application.Gilneas.Hasher\Ex.Application.Gilneas.Hasher.csproj", "{EF148A2F-77D7-406E-A1D9-7D4FF6BE7F36}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex.Application.Gilneas.Installer", "Ex.Application.Gilneas.Installer\Ex.Application.Gilneas.Installer.csproj", "{55F8568D-ADA2-4113-AC7D-C58AFCAAD75B}"
@@ -69,14 +67,6 @@ Global
 		{D4302332-4895-4EAE-B662-1FF3184EA2D3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D4302332-4895-4EAE-B662-1FF3184EA2D3}.Release|x64.ActiveCfg = Release|Any CPU
 		{D4302332-4895-4EAE-B662-1FF3184EA2D3}.Release|x64.Build.0 = Release|Any CPU
-		{BAAFCBDA-C738-4CED-AB4D-735D20E57721}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BAAFCBDA-C738-4CED-AB4D-735D20E57721}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BAAFCBDA-C738-4CED-AB4D-735D20E57721}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{BAAFCBDA-C738-4CED-AB4D-735D20E57721}.Debug|x64.Build.0 = Debug|Any CPU
-		{BAAFCBDA-C738-4CED-AB4D-735D20E57721}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BAAFCBDA-C738-4CED-AB4D-735D20E57721}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BAAFCBDA-C738-4CED-AB4D-735D20E57721}.Release|x64.ActiveCfg = Release|Any CPU
-		{BAAFCBDA-C738-4CED-AB4D-735D20E57721}.Release|x64.Build.0 = Release|Any CPU
 		{EF148A2F-77D7-406E-A1D9-7D4FF6BE7F36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EF148A2F-77D7-406E-A1D9-7D4FF6BE7F36}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF148A2F-77D7-406E-A1D9-7D4FF6BE7F36}.Debug|x64.ActiveCfg = Debug|Any CPU

@@ -40,6 +40,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -102,7 +103,9 @@
     <Compile Include="Core\Installer\InstallCoreObject.cs" />
     <Compile Include="Core\Installer\InstallElement.cs" />
     <Compile Include="Core\Installer\IShell.cs" />
+    <Compile Include="Core\Installer\Shells\CheckInstalledShell.cs" />
     <Compile Include="Core\Installer\Shells\CreateShortcutShell.cs" />
+    <Compile Include="Core\Installer\Shells\InstallServiceShell.cs" />
     <Compile Include="Core\Language\Behaviours\LangStorageBehaviour.cs" />
     <Compile Include="Core\Language\LanguageCoreObject.cs" />
     <Compile Include="Core\Settings\Behaviours\SettingsReadBehaviour.cs" />

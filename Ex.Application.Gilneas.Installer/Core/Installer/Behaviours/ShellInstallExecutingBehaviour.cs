@@ -18,7 +18,9 @@ namespace Ex.Application.Gilneas.Installer.Core.Installer.Behaviours
             m_InstallCoreObject = Unbox<InstallCoreObject>( ParentObject );
             m_InstallShells = new List<IShell>()
             {
-                new CreateShortcutShell()
+                new CreateShortcutShell(),
+                new CheckInstalledShell(),
+                new InstallServiceShell()
             };
         }
 

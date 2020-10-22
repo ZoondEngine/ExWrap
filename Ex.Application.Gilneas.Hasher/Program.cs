@@ -1,4 +1,5 @@
 ﻿using Ex.Application.Gilneas.Hasher.Core;
+using Ex.Crypto;
 
 using System;
 using System.Diagnostics;

@@ -40,6 +40,11 @@ namespace Ex.Application.Firelands.Service.Core.Driver
         public void Call()
             => OnHeartbitFail?.Invoke();
 
+        public void EnableHeartbeat()
+            => GetComponent<DriverHeartbeatBehaviour>().Switch( true );
+        public void DisableHeartbeat()
+            => GetComponent<DriverHeartbeatBehaviour>().Switch( false );
+
         public bool Request<TIn, TOut>( uint code, TIn request, TOut response ) 
             where TIn : BaseRequest 
             where TOut : BaseResponse

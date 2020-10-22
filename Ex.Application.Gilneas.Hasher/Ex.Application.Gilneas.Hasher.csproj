@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\HashObject.cs" />
     <Compile Include="Core\TerminalObject.cs" />
     <Compile Include="Core\Command\Actions\Reading.cs" />
     <Compile Include="Core\Command\ReadBehaviour.cs" />

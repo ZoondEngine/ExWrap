@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            this.ServiceName = "Firelands Update Agent";
+            this.ServiceName = "FirelandsAC_UM";
         }
 
         #endregion

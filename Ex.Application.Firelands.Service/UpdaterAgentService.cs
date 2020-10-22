@@ -22,12 +22,9 @@ namespace Ex.Application.Firelands.Service
         }
 
         protected override void OnStart( string[] args )
-        {
-        }
+            => Entry.Start();
 
         protected override void OnStop()
-        {
-
-        }
+            => Entry.Stop();
     }
 }

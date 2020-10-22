@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ex.Application.Gilneas.Hasher.Core
+namespace Ex.Crypto
 {
     public class HashObject : ExObject
     {
@@ -27,18 +27,18 @@ namespace Ex.Application.Gilneas.Hasher.Core
 
         public string Hash<T>( string path ) where T : HashAlgorithm
         {
-            if(File.Exists(path))
+            if ( File.Exists( path ) )
             {
                 using ( var stream = File.OpenRead( path ) )
                 {
                     var stringBuilder = new StringBuilder();
                     MethodInfo create = typeof( T ).GetMethod( "Create", new Type[] { } );
-                    if(create != null)
+                    if ( create != null )
                     {
                         using ( T cryptor = ( T ) create.Invoke( null, null ) )
                         {
                             byte[] bytes = cryptor.ComputeHash( stream );
-                            for(var it = 0; it < bytes.Length; it++ )
+                            for ( var it = 0; it < bytes.Length; it++ )
                             {
                                 stringBuilder.Append( bytes[ it ].ToString( "X2" ) );
                             }

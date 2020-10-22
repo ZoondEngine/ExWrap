@@ -8,7 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800" Width="323" Height="380">
     <Grid>
         <Label x:Name="InstallTitle" Content="Установка успешно завершена" HorizontalAlignment="Left" Margin="22,77,0,0" VerticalAlignment="Top" Foreground="#FFFFFCFC" FontSize="14" FontWeight="Bold"/>
-        <CheckBox Name="RunLauncher" Content="Запустить Launcher" HorizontalAlignment="Left" Margin="45,131,0,0" VerticalAlignment="Top" Foreground="#FF9B9B9B"/>
+        <CheckBox Name="RunLauncher" Content="Запустить Launcher" HorizontalAlignment="Left" Margin="45,131,0,0" VerticalAlignment="Top" Foreground="#FFCBCBCB" Background="#FF060917" BorderBrush="#FF1279AA"/>
         <Button x:Name="InstallRun" Content="Завершить" HorizontalAlignment="Left" Margin="215,338,0,0" VerticalAlignment="Top" Width="94" Height="31" Background="#CC00AEFF" BorderBrush="#CC075A81" Foreground="White" OverridesDefaultStyle="True" Cursor="Hand" Click="Button_Click_2"/>
 
     </Grid>

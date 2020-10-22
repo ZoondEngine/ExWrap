@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -58,6 +61,13 @@
     <Compile Include="Core\Driver\Structures\BaseResponse.cs" />
     <Compile Include="Core\Driver\Structures\Heartbeat\HeartbeatRequest.cs" />
     <Compile Include="Core\Driver\Structures\Heartbeat\HeartbeatResponse.cs" />
+    <Compile Include="Core\Update\Behaviours\AccessorData\ManifestItem.cs" />
+    <Compile Include="Core\Update\Behaviours\AccessorData\SoftwareUpdater.cs" />
+    <Compile Include="Core\Update\Behaviours\UpdateAccessorBehaviour.cs" />
+    <Compile Include="Core\Update\Behaviours\UpdateLocalStoreBehaviour.cs" />
+    <Compile Include="Core\Update\ExUpdateObject.cs" />
+    <Compile Include="Entry.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="UpdaterAgentService.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -69,10 +79,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Core\Update\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Ex.Plugin.Log\Ex.Plugin.Log.csproj">
       <Project>{a0e6a95a-a604-4ad3-8559-670e0981fe60}</Project>

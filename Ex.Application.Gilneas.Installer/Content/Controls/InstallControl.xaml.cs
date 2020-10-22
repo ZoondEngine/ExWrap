@@ -1,17 +1,10 @@
 ﻿using Ex.Application.Gilneas.Installer.Core.API;
-using Ex.Application.Gilneas.Installer.Core.API.Behaviours.Utilities;
 using Ex.Application.Gilneas.Installer.Core.Installer;
-using Ex.Exceptions;
-
-using System;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-
 using MessageBox = System.Windows.Forms.MessageBox;
 using Uri = System.Uri;
 using UserControl = System.Windows.Controls.UserControl;
