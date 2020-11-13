@@ -116,7 +116,7 @@ namespace Ex.Application.Gilneas.Hasher
             writer.Trace( "Start hashing ..." );
 
             if ( globalStopwatch != null )
-                globalStopwatch.Start();
+                 globalStopwatch.Start();
 
             using ( var manifestFile = new FileStream( ".manifest", FileMode.OpenOrCreate ) )
             {

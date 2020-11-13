@@ -21,7 +21,7 @@ namespace Ex.Application.Gilneas.Installer.Core.Settings.Behaviours
             {
                 ["Testing"] = new List<string>()
                 {
-                    "Beta=1"
+                    "Beta=0"
                 }
             };
         }
